@@ -1,0 +1,61 @@
+{
+  "resources/css/admin/icons/tabler-icons/fonts/tabler-icons.eot": {
+    "file": "assets/tabler-icons-D91Td7Em.eot",
+    "src": "resources/css/admin/icons/tabler-icons/fonts/tabler-icons.eot"
+  },
+  "resources/css/admin/icons/tabler-icons/fonts/tabler-icons.svg": {
+    "file": "assets/tabler-icons-DkKlmoMw.svg",
+    "src": "resources/css/admin/icons/tabler-icons/fonts/tabler-icons.svg"
+  },
+  "resources/css/admin/icons/tabler-icons/fonts/tabler-icons.ttf": {
+    "file": "assets/tabler-icons-Bj6HnZqC.ttf",
+    "src": "resources/css/admin/icons/tabler-icons/fonts/tabler-icons.ttf"
+  },
+  "resources/css/admin/icons/tabler-icons/fonts/tabler-icons.woff": {
+    "file": "assets/tabler-icons-5JjTyLEB.woff",
+    "src": "resources/css/admin/icons/tabler-icons/fonts/tabler-icons.woff"
+  },
+  "resources/css/admin/icons/tabler-icons/fonts/tabler-icons.woff2": {
+    "file": "assets/tabler-icons-CdTAjtqK.woff2",
+    "src": "resources/css/admin/icons/tabler-icons/fonts/tabler-icons.woff2"
+  },
+  "resources/css/admin/styles.min.css": {
+    "file": "assets/styles-YBLSZPxs.css",
+    "src": "resources/css/admin/styles.min.css",
+    "isEntry": true
+  },
+  "resources/js/admin/app.min.js": {
+    "file": "assets/app.min-YE6JtEkT.js",
+    "src": "resources/js/admin/app.min.js",
+    "isEntry": true,
+    "imports": [
+      "resources/js/admin/jquery/dist/jquery.min.js",
+      "resources/js/admin/sidebarmenu.js"
+    ]
+  },
+  "resources/js/admin/dashboard.js": {
+    "file": "assets/dashboard-B2bA0ceP.js",
+    "src": "resources/js/admin/dashboard.js",
+    "isEntry": true
+  },
+  "resources/js/admin/jquery/dist/jquery.min.js": {
+    "file": "assets/jquery.min-B3p5-zax.js",
+    "src": "resources/js/admin/jquery/dist/jquery.min.js",
+    "isEntry": true
+  },
+  "resources/js/admin/sidebarmenu.js": {
+    "file": "assets/sidebarmenu-Cqe42Uci.js",
+    "src": "resources/js/admin/sidebarmenu.js",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CzO9eMXd.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-CLlo58a7.css",
+    "src": "resources/sass/app.scss",
+    "isEntry": true
+  }
+}
