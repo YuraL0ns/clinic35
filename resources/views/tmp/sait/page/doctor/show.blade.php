@@ -5,7 +5,7 @@
 
         <div class="doctor_page_view-box">
             <div class="doctor_page_view-box-item">
-                <img class="doctor_page_view-box-item-images" src="{{$doctor->doctor_img}}" alt="">
+                <img class="doctor_page_view-box-item-images" src="{{$doctor->doctor_images}}" alt="">
             </div>
         </div>
 
