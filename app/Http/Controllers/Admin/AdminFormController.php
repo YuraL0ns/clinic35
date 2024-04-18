@@ -9,7 +9,7 @@ class AdminFormController extends Controller
 {
     public function getDataFromForm()
     {
-        $messages = MessageForm::all();
-        return view('admin.page.messages.list', compact('messages'));
+        $submissions = MessageForm::all();
+        return view('admin.page.messages.list', compact('submissions'));
     }
 }

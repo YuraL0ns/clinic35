@@ -1,41 +1,46 @@
 @extends('adminlte::page')
 
-@section('title', 'Панель управления - Первая многопрофильная клиника')
+@section('title', 'Submissions')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Сообщения из форм на сайте</h1>
+    <h1>Submissions</h1>
 @stop
 
 @section('content')
-    <div class="col-12">
-        <div class="row">
-            <div class="col-4">
-                <h1>Header</h1>
-                @foreach($messages as $message)
-                    @if($message->from === 'header')
-                        {{$message->name}}
-                    @endif
-                @endforeach
-            </div>
-            <div class="col-4">
-                <h1>Footer</h1>
-                @foreach($messages as $message)
-                    @if($message->from === 'footer')
-                        {{$message->name}}
-                    @endif
-                @endforeach
-            </div>
-            <div class="col-4">
-                <h1>Page</h1>
-                @foreach($messages as $message)
-                    @if($message->from === 'page-vacancy')
-                        {{$message->name}}
-                    @endif
-                @endforeach
-            </div>
-        </div>
+    <div class="row">
+        @php
+            $groups = ['header' => [], 'Из подвала сайта' => [], 'Отдельная страница' => []];
+            foreach ($submissions as $submission) {
+                $groups[$submission->from][] = $submission;
+            }
+        @endphp
 
-
-
+        @foreach ($groups as $type => $groupSubmissions)
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ ucfirst($type) }} </h3>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Имя</th>
+                                <th>Телефон</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($groupSubmissions as $submission)
+                                <tr>
+                                    <td>{{ $submission->name }}</td>
+                                    <td><a href="tel:{{ $submission->phone }}">{{ $submission->phone }}</a></td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 @stop

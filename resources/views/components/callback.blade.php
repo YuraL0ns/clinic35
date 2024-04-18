@@ -14,6 +14,7 @@
           <div class="zapis-box-form-row">
             <input type="text" name="name" placeholder="Ваше имя" class="zapis-box-form-input">
             <input type="text" name="phone" placeholder="Ваш номер телефона" class="zapis-box-form-input">
+            <input type="hidden" name="from" value="footer">
           </div>
           <button class="zapis-box-form-button" type="submit">Заказать звонок</button>
           <div class="zapis-box-form-small">

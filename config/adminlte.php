@@ -408,7 +408,12 @@ return [
             ],
         ],
         ['header' => 'Настройки сайта'],
-        
+        [
+            'text' => 'Сообщения',
+            'url' => 'admin/messages',
+            'icon' => 'fas fa-envelop',
+            'icon_color' => 'warning',
+        ],
         ['header' => 'Пользователи сайта'],
         [
             'text' => 'Список пользователей',

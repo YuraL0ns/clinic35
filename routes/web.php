@@ -109,7 +109,7 @@ Route::get('vacancy/{vacancy}', [VacancyController::class, 'show'])->name('vacan
 Route::delete('vacancy/{id}', [VacancyController::class, 'destroy'])->name('vacancy.delete');
 
 
-Route::get('forms', [AdminFormController::class, 'getDataFromForm'])->name('form.list');
+Route::get('messages', [AdminFormController::class, 'getDataFromForm'])->name('form.list');
 
   });
 
