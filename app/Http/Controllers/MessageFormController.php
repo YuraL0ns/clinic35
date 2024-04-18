@@ -20,4 +20,17 @@ class MessageFormController extends Controller
 
         return redirect()->back()->with('message', 'Ваше сообщение успешно отправлено');
     }
+    public function sendMessageFromFooter(Request $request)
+    {
+        $val = $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'from' => 'required'
+        ]);
+
+        $message = MessageForm::create($val);
+        event(new NewMessageReceived($message));
+
+        return redirect()->back()->with('message', 'Ваше сообщение успешно отправлено');
+    }
 }
