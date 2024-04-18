@@ -30,7 +30,7 @@
       @foreach($doctors as $doctor)
         <div class="doctors-box-item">
           <a href="{{route('sait.doctor.show', $doctor->doctor_alias)}}" class="doctors-box-item-link">
-            <img class="doctors-box-item-link-images" src="{{$doctor->doctor_img}}" alt="{{$doctor->doctor_name}}">
+            <img class="doctors-box-item-link-images" src="{{$doctor->doctor_images}}" alt="{{$doctor->doctor_name}}">
             <p class="doctors-box-item-link-name">{{$doctor->doctor_name}}</p>
           </a>
         </div>
