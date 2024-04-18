@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\AdminFormController;
 
 // Send Messages
 Route::post('/submit-form-header', [MessageFormController::class, 'sendMessageFromHeader'])->name('send.from.header');
-Route::post('/submit-form-footer', [SendContactsController::class, 'sendMessageFromFooter'])->name('send.from.footer');
+Route::post('/submit-form-footer', [MessageFormController::class, 'sendMessageFromFooter'])->name('send.from.footer');
 Route::get('/', [MainController::class, 'index_page'])->name('sait.home.page');
 Route::get('page/{page_alias}', [PagesController::class, 'show'])->name('custom.page');
 
