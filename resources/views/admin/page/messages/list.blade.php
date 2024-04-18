@@ -9,7 +9,7 @@
 @section('content')
     <div class="row">
         @php
-            $groups = ['header' => [], 'Из подвала сайта' => [], 'Отдельная страница' => []];
+            $groups = ['header' => [], 'footer' => [], 'page_vacancy' => []];
             foreach ($submissions as $submission) {
                 $groups[$submission->from][] = $submission;
             }
