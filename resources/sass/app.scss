@@ -57,6 +57,7 @@
   .doctors,
   .contacts,
   .zapis,
+  .vacancy,
   .footer,
   .main {
       &__container {
@@ -71,6 +72,7 @@
   .services,
   .doctors,
   .contacts,
+  .vacancy,
   .zapis,
   .footer,
   .main {
@@ -683,6 +685,45 @@
         }
       }
     }
+  }
+  .vacancy{
+   &-item {
+     min-height: 90px;
+     display: flex;
+     flex-direction: column;
+     align-items:center;
+     justify-content: space-between;
+     width: 100%;
+     height: 100%;
+     color: $pink;
+     padding: 10px 20px;
+     border-radius: $border-radius;
+     background-color: $white;
+     box-shadow: $box-shadow;
+     &__header {
+      font-size: 20px;
+      font-weight: 500;
+      padding: 10px 0;
+      text-align: left;
+      width: 100%;
+     }
+     &__description {
+       width: 100%;
+     }
+     &__images {
+       width: 100%;
+       border-radius: $border-radius;
+     }
+     &__look {
+       font-weight: 500;
+       text-transform: uppercase;
+       letter-spacing: 1.1px;
+       width: 100%;
+       text-decoration: underline;
+       color: $purple;
+       text-align: right;
+     }
+   }
   }
 
   @media screen and (min-width: 320px)  {
@@ -2933,9 +2974,8 @@
         &-item{
           padding: 10px;
           width: 24%;
-          height: auto;
-          display: flex;
           height: 100%;
+          display: flex;
           &-images {
             height: 96px;
             margin-bottom: 10px;
@@ -3373,7 +3413,7 @@
             flex-direction: row;
             column-gap: 50px;
             &:nth-child(1){
-                align-items: centers;
+                align-items: center;
             }
             &:nth-child(3){
                 align-items: end;

@@ -42,6 +42,7 @@ section + section {
 .doctors__container,
 .contacts__container,
 .zapis__container,
+.vacancy_container,
 .footer__container,
 .main__container {
   width: 100%;
