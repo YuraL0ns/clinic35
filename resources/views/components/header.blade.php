@@ -32,6 +32,7 @@
       </div>
 
 
+
       <div id="myModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -81,7 +82,7 @@
             <a href="{{route('sait.page.documents')}}">Документы</a>
           </li>
           <li class="navbar-menu-list-item">
-            <a href="{{route('contact')}}">Вакансии</a>
+            <a href="{{route('sait.vacancy.main')}}">Вакансии</a>
           </li>
           <li class="navbar-menu-list-item">
             <a href="{{route('contact')}}">Контакты</a>
@@ -90,3 +91,24 @@
       </div>
     </div>
   </section>
+
+@section('js')
+  <script>
+    const modal = document.getElementById("myModal");
+    const closeBtn = document.querySelector(".close");
+
+    closeBtn.onclick = closeModal;
+
+    window.onclick = (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+    function openModal() {
+      modal.style.display = "block";
+    }
+    function closeModal() {
+      modal.style.display = "none";
+    }
+  </script>
+@stop

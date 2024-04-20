@@ -8,6 +8,7 @@ use App\Models\Razdel;
 use App\Models\Service;
 use App\Models\Sales;
 
+use App\Models\Vacancy;
 use Illuminate\Http\Request;
 
 use Artesaos\SEOTools\Facades\SEOTools;
@@ -98,8 +99,15 @@ class MainController extends Controller
 		return view('tmp.sait.page.price.info', compact('sale'))->with('sales_alias', $alias);
 	}
 
-    public function page_vacansy() {
-        return view('tmp.sait.page.vacansy.show');
+    public function mainVacancy() {
+
+        $vacansies = Vacancy::all();
+        return view('tmp.sait.page.vacansy.main', compact('vacansies'));
+    }
+
+    public function showVacancy($vacancy_alias){
+        $vacancy = Vacancy::where('vacancy_alias', $vacancy_alias)->first();
+        return view('tmp.sait.page.vacansy.show', compact('vacancy'));
     }
 
 

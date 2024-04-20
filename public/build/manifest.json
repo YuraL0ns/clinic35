@@ -49,8 +49,16 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-CzO9eMXd.js",
+    "file": "assets/app-w9sf1rlo.js",
     "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "resources/js/echo.js"
+    ]
+  },
+  "resources/js/echo.js": {
+    "file": "assets/echo-jYg4VDzb.js",
+    "src": "resources/js/echo.js",
     "isEntry": true
   },
   "resources/sass/app.scss": {

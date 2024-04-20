@@ -40,6 +40,9 @@ Route::get('abouts', [MainController::class, 'page_abouts'])->name('sait.page.ab
 Route::get('documents', [MainController::class, 'page_documents'])->name('sait.page.documents');
 Route::get('contacts', [MainController::class, 'page_contacts'])->name('contact');
 
+Route::get('vacancy', [MainController::class, 'mainVacancy'])->name('sait.vacancy.main');
+Route::get('vacancy/{vacancy_alias}', [MainController::class, 'showVacancy'])->name('sait.vacancy.show');
+
 
 
 

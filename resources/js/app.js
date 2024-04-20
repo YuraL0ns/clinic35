@@ -1,13 +1,58 @@
 import './bootstrap';
 
-document.addEventListener("DOMContentLoaded",(function(){const navbarMenuBtn=document.querySelector(".navbar-menu-btn"),navbarMenuList=document.querySelector(".navbar-menu-list");navbarMenuBtn.addEventListener("click",(function(){window.innerWidth>=320&&window.innerWidth<=997&&navbarMenuList.classList.toggle("active")})),document.addEventListener("click",(function(event){const target=undefined;event.target.closest(".navbar-menu")||navbarMenuList.classList.remove("active")}))}));
-import 'pusher-js'
-import './echo.js'
-window.Pusher = require('pusher-js');
+// Обработчик готовности DOM
+document.addEventListener("DOMContentLoaded", () => {
+    const navbarMenuBtn = document.querySelector(".navbar-menu-btn");
+    const navbarMenuList = document.querySelector(".navbar-menu-list");
 
-window.Echo = new Echo({
-    broadcaster: 'pusher',
-    key: process.env.MIX_PUSHER_APP_KEY,
-    cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-    encrypted: true
+    // Переключение класса active для меню при клике
+    navbarMenuBtn.addEventListener("click", () => {
+        if (window.innerWidth >= 320 && window.innerWidth <= 997) {
+            navbarMenuList.classList.toggle("active");
+        }
+    });
+
+    // Закрытие меню при клике вне его области
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest(".navbar-menu")) {
+            navbarMenuList.classList.remove("active");
+        }
+    });
 });
+
+const form = document.getElementById('myForm');
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+        const formData = new FormData(form);
+        const response = await fetch('/submit-form-header', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            },
+        });
+
+        if (response.ok) {
+            await Swal.fire({
+                title: 'Успех!',
+                text: 'Ваше сообщение успешно отправлено.',
+                icon: 'success',
+            });
+            form.reset();
+        } else {
+            throw new Error('Сетевая ошибка');
+        }
+    } catch (error) {
+        Swal.fire({
+            title: 'Ошибка!',
+            text: error.message || 'Произошла ошибка при отправке формы.',
+            icon: 'error',
+        });
+    }
+
+
+});
+
+
+
