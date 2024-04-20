@@ -5,14 +5,14 @@
         <div class="service_page-view">
             
             <h1 class="service_page-view-title">{{ $service->service_title }}</h1>
-            <p class="service_page-view-desc">{{$service->service_title_description}}</p>
+            <p class="service_page-view-desc">{{$service->service_description}}</p>
             @if ($service->doctors->isNotEmpty())
             <h3 class="service_page-view-title">Доктора</h3>
             <div class="service_page-view-doctor-box">
                 @foreach($service->doctors as $doc)
                 <div class="service_page-view-doctor-box-block">
                     <a class="service_page-view-doctor-box-block-link" href="{{route('sait.doctor.show', $doc->doctor_alias)}}">
-                        <img class="service_page-view-doctor-box-block-link-images" src="/{{$doc->doctor_img}}" alt="{{$doc->doctor_name}}">
+                        <img class="service_page-view-doctor-box-block-link-images" src="/{{$doc->doctor_images}}" alt="{{$doc->doctor_name}}">
                         <span class="service_page-view-doctor-box-block-link-name">{{$doc->doctor_name}}</span>
                     </a>
                 </div>
