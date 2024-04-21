@@ -609,7 +609,9 @@ class ComposerStaticInitd30402fb697362d22a357994885dacf8
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Events\\NewMessageReceived' => __DIR__ . '/../..' . '/app/Events/NewMessageReceived.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\AdminFormController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminFormController.php',
         'App\\Http\\Controllers\\Admin\\CustomController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CustomController.php',
         'App\\Http\\Controllers\\Admin\\SaitConfigController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SaitConfigController.php',
         'App\\Http\\Controllers\\Admin\\VacancyController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/VacancyController.php',
@@ -632,6 +634,7 @@ class ComposerStaticInitd30402fb697362d22a357994885dacf8
         'App\\Http\\Controllers\\DoctorController' => __DIR__ . '/../..' . '/app/Http/Controllers/DoctorController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/MainController.php',
+        'App\\Http\\Controllers\\MessageFormController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessageFormController.php',
         'App\\Http\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/PagesController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',

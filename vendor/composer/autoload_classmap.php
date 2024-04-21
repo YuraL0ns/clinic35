@@ -7,7 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Events\\NewMessageReceived' => $baseDir . '/app/Events/NewMessageReceived.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\Admin\\AdminFormController' => $baseDir . '/app/Http/Controllers/Admin/AdminFormController.php',
     'App\\Http\\Controllers\\Admin\\CustomController' => $baseDir . '/app/Http/Controllers/Admin/CustomController.php',
     'App\\Http\\Controllers\\Admin\\SaitConfigController' => $baseDir . '/app/Http/Controllers/Admin/SaitConfigController.php',
     'App\\Http\\Controllers\\Admin\\VacancyController' => $baseDir . '/app/Http/Controllers/Admin/VacancyController.php',
@@ -30,6 +32,7 @@ return array(
     'App\\Http\\Controllers\\DoctorController' => $baseDir . '/app/Http/Controllers/DoctorController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\MainController' => $baseDir . '/app/Http/Controllers/MainController.php',
+    'App\\Http\\Controllers\\MessageFormController' => $baseDir . '/app/Http/Controllers/MessageFormController.php',
     'App\\Http\\Controllers\\PagesController' => $baseDir . '/app/Http/Controllers/PagesController.php',
     'App\\Http\\Controllers\\PostController' => $baseDir . '/app/Http/Controllers/PostController.php',
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
