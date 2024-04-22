@@ -13,15 +13,16 @@ class WorkTimeController extends Controller
     // Показ всех записей
     public function index()
     {
-        $workTimes = WorkTime::with('doctor')->get();
-        return view('work_times.index', compact('workTimes'));
+        $doctors = Doctor::with('workTimes')->get();
+        return view('work_times.index', compact('doctors'));
     }
 
     // Форма создания новой записи
-    public function create()
+    public function create(Request $request)
     {
         $doctors = Doctor::all();
-        return view('work_times.create', compact('doctors'));
+        $selectedDoctorId = $request->input('doctor_id');
+        return view('work_times.create', compact('doctors', 'selectedDoctorId'));
     }
 
     // Сохранение новой записи

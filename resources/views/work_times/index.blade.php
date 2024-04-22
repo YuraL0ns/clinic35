@@ -1,51 +1,48 @@
 {{-- resources/views/work_times/index.blade.php --}}
 @extends('adminlte::page')
 
-@section('title', 'Время работы спецалиста')
+@section('title', 'Work Times')
 
 @section('content_header')
-    <h1>Время работы спецалиста</h1>
-    <a href="{{ route('admin.work_times.create') }}" class="btn btn-primary">Добавить</a>
-@stop
-@section('js')
-    <script>
-        @if(session('success'))
-        Swal.fire({
-            icon: 'success',
-            title: 'Данные внесены',
-            text: '{{ session('success') }}',
-        });
-        @endif
-    </script>
-@stop
-@section('content')
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Имя специалиста</th>
-            <th>Время работы</th>
-            <th>Действия</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach ($workTimes as $workTime)
-            <tr>
-                <td>{{ $workTime->id }}</td>
-                <td>{{ $workTime->doctor->doctor_name }}</td>
-                <td>{{ $workTime->work_time }}</td>
-                <td>
-                    <a href="{{ route('admin.work_times.show', $workTime) }}" class="btn btn-xs btn-success">Просмотр</a>
-                    <a href="{{ route('admin.work_times.edit', $workTime) }}" class="btn btn-xs btn-info">Изменить</a>
-                    <form action="{{ route('admin.work_times.destroy', $workTime) }}" method="POST" style="display: inline-block;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Вы уверены?')">Удалить</button>
-                    </form>
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
+    <h1>Work Times</h1>
 @stop
 
+@section('content')
+    <div class="accordion" id="doctorsAccordion">
+        @foreach ($doctors as $index => $doctor)
+            <div class="card">
+                <div class="card-header" id="heading{{ $index }}">
+                    <h2 class="mb-0 d-flex justify-content-between">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{ $index }}" aria-expanded="true" aria-controls="collapse{{ $index }}">
+                                {{ $doctor->doctor_name }}
+                            </button>
+                            <!-- Кнопка для добавления новой даты -->
+                        <a href="{{ route('admin.work_times.create', ['doctor_id' => $doctor->id]) }}" class="btn btn-sm btn-primary float-right">Добавить время</a>
+
+                    </h2>
+                </div>
+
+                <div id="collapse{{ $index }}" class="collapse {{ $index == 0 ? 'show' : '' }}" aria-labelledby="heading{{ $index }}" data-parent="#doctorsAccordion">
+                    <div class="card-body">
+                        <ul>
+                            @foreach ($doctor->workTimes as $workTime)
+                                <li>@customDate($workTime->work_time)</li>
+
+
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+@stop
+
+@section('css')
+
+@stop
+
+@section('js')
+    <script>
+    </script>
+@stop
