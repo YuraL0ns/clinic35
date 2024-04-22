@@ -6,74 +6,7 @@
     <h1 class="m-0 text-dark">Главная страница CRM системы</h1>
 @stop
 
-@section('right-sidebar')
-    <p class="ml-4 mt-4">Новые сообщения:</p>
-    <ul id="notifications-menu" class="ml-4 mt-4">
 
-    </ul>
-    <span id="notifications-count">0</span>
-@endsection
-
-<div class="">
-
-    <div class="card-box">
-        <div class="card-header">
-           Новые сообщения <h4>0</h4> Сообщения из шапки сайта
-        </div>
-        <div class="card-body">
-            <ul>
-                <li>
-                    <span>От Юрия</span> - <a href="tel:+79999999999">+7 (999) 999 9999</a> <a href="admin.create.contagent.profile">Создать карточку контакта <b>+</b></a>
-                </li>
-                <li>
-                    <span>От Таби</span> - <a href="tel:+79999999999">+7 (999) 999 9999</a> <a href="admin.create.contagent.profile">Создать карточку контакта <b>+</b></a>
-                </li>
-                <li>
-                    <span>От Максима</span> - <a href="tel:+79999999999">+7 (999) 999 9999</a> <a href="admin.create.contagent.profile">Создать карточку контакта <b>+</b></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="card-box">
-        <div class="card-header">
-            Новые сообщения <h4>11</h4> из <b>151</b> Сообщения из подвала сайта
-        </div>
-        <div class="card-body">
-            <ul>
-                <li>
-                    <span>От Юрия</span> - <a href="tel:+79999999999">+7 (999) 999 9999</a> <a href="admin.create.contagent.profile">Создать карточку контакта <b>+</b></a>
-                </li>
-                <li>
-                    <span>От Таби</span> - <a href="tel:+79999999999">+7 (999) 999 9999</a> <a href="admin.create.contagent.profile">Создать карточку контакта <b>+</b></a>
-                </li>
-                <li>
-                    <span>От Максима</span> - <a href="tel:+79999999999">+7 (999) 999 9999</a> <a href="admin.create.contagent.profile">Создать карточку контакта <b>+</b></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="card-box">
-        <div class="card-header">
-            Новые сообщения <h4>5</h4> из <b>127</b> Сообщения со страницы контакты
-        </div>
-        <div class="card-body">
-            <ul>
-                <li>
-                    <span>От Юрия</span> - <a href="tel:+79999999999">+7 (999) 999 9999</a> <a href="admin.create.contagent.profile">Создать карточку контакта <b>+</b></a>
-                </li>
-                <li>
-                    <span>От Таби</span> - <a href="tel:+79999999999">+7 (999) 999 9999</a> <a href="admin.create.contagent.profile">Создать карточку контакта <b>+</b></a>
-                </li>
-                <li>
-                    <span>От Максима</span> - <a href="tel:+79999999999">+7 (999) 999 9999</a> <a href="admin.create.contagent.profile">Создать карточку контакта <b>+</b></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-</div>
 
 @section('content')
 @if(Session::has('success'))
