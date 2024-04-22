@@ -13,11 +13,9 @@
         <div class="form-group">
             <label for="doctor_id">Выберите специалиста</label>
             <select class="form-control" name="doctor_id">
-                <select class="form-control" name="doctor_id">
                     @foreach($doctors as $doctor)
-                        <option value="{{ $doctor->id }}" {{ $selectedDoctorId === $doctor->id ? 'selected' : '' }}>{{ $doctor->doctor_name }}</option>
+                        <option value="{{ $doctor->id }}" {{ (int) $selectedDoctorId === $doctor->id ? 'selected' : '' }}>{{ $doctor->doctor_name }}</option>
                     @endforeach
-                </select>
 
             </select>
 
