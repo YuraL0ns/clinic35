@@ -5,7 +5,49 @@
 @section('content_header')
     <h1 class="m-0 text-dark">Добавить нового специалиста</h1>
 @stop
+@section('js')
+    <script>
+        function translit(word) {
+            var answer = '';
+            var converter = {
+                'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd',
+                'е': 'e', 'ё': 'e', 'ж': 'zh', 'з': 'z', 'и': 'i',
+                'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n',
+                'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't',
+                'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch',
+                'ш': 'sh', 'щ': 'sch', 'ь': '', 'ы': 'y', 'ъ': '',
+                'э': 'e', 'ю': 'yu', 'я': 'ya',
 
+                'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Д': 'D',
+                'Е': 'E', 'Ё': 'E', 'Ж': 'Zh', 'З': 'Z', 'И': 'I',
+                'Й': 'Y', 'К': 'K', 'Л': 'L', 'М': 'M', 'Н': 'N',
+                'О': 'O', 'П': 'P', 'Р': 'R', 'С': 'S', 'Т': 'T',
+                'У': 'U', 'Ф': 'F', 'Х': 'H', 'Ц': 'C', 'Ч': 'Ch',
+                'Ш': 'Sh', 'Щ': 'Sch', 'Ь': '', 'Ы': 'Y', 'Ъ': '',
+                'Э': 'E', 'Ю': 'Yu', 'Я': 'Ya', ' ': '-'
+            };
+
+            for (var i = 0; i < word.length; ++i) {
+                if (converter[word[i]] == undefined) {
+                    answer += word[i];
+                } else {
+                    answer += converter[word[i]];
+                }
+            }
+
+            return answer;
+        }
+
+        window.onload = function () {
+            let doctorName = document.getElementById('doctor_name');
+            let doctorAlias = document.getElementById('doctor_alias');
+
+            doctorName.addEventListener('input', function () {
+                doctorAlias.value = translit(this.value);
+            });
+        }
+    </script>
+@stop
 @section('content')
     @if (Session::has('success'))
         <div class="alert alert-primary alert-dismissible bg-success text-white border-0 fade show" role="alert">
@@ -111,46 +153,3 @@
     </div>
 @stop
 
-@section('js')
-    <script>
-        function translit(word) {
-            var answer = '';
-            var converter = {
-                'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd',
-                'е': 'e', 'ё': 'e', 'ж': 'zh', 'з': 'z', 'и': 'i',
-                'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n',
-                'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't',
-                'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch',
-                'ш': 'sh', 'щ': 'sch', 'ь': '', 'ы': 'y', 'ъ': '',
-                'э': 'e', 'ю': 'yu', 'я': 'ya',
-
-                'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Д': 'D',
-                'Е': 'E', 'Ё': 'E', 'Ж': 'Zh', 'З': 'Z', 'И': 'I',
-                'Й': 'Y', 'К': 'K', 'Л': 'L', 'М': 'M', 'Н': 'N',
-                'О': 'O', 'П': 'P', 'Р': 'R', 'С': 'S', 'Т': 'T',
-                'У': 'U', 'Ф': 'F', 'Х': 'H', 'Ц': 'C', 'Ч': 'Ch',
-                'Ш': 'Sh', 'Щ': 'Sch', 'Ь': '', 'Ы': 'Y', 'Ъ': '',
-                'Э': 'E', 'Ю': 'Yu', 'Я': 'Ya', ' ': '-'
-            };
-
-            for (var i = 0; i < word.length; ++i) {
-                if (converter[word[i]] == undefined) {
-                    answer += word[i];
-                } else {
-                    answer += converter[word[i]];
-                }
-            }
-
-            return answer;
-        }
-
-        window.onload = function () {
-            let doctorName = document.getElementById('doctor_name');
-            let doctorAlias = document.getElementById('doctor_alias');
-
-            doctorName.addEventListener('input', function () {
-                doctorAlias.value = translit(this.value);
-            });
-        }
-    </script>
-@stop
