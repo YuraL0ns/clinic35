@@ -236,7 +236,7 @@ return [
     |
     */
 
-    'right_sidebar' => true,
+    'right_sidebar' => false,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
@@ -316,6 +316,12 @@ return [
                     'url' => 'admin/doctors/create',
                     'icon' => 'fas fa-plus',
                     'icon_color' => 'success'
+                ],
+                [
+                    'text' => 'Время приёма',
+                    'url' => 'admin/work-times',
+                    'icon' => 'fas fa-clock',
+                    'icon_color' => 'primary'
                 ],
             ],
         ],
@@ -407,6 +413,7 @@ return [
                 ],
             ],
         ],
+
         ['header' => 'Настройки сайта'],
         [
             'text' => 'Сообщения',

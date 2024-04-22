@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Service;
+use App\Models\WorkTime;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Doctor extends Model
@@ -34,6 +35,11 @@ class Doctor extends Model
     public function services() : BelongsToMany
     {
         return $this->belongsToMany(Service::class, 'doctor_service', 'service_id', 'doctor_id');
+    }
+
+    public function workTimes()
+    {
+        return $this->hasMany(WorkTime::class);
     }
 
 }

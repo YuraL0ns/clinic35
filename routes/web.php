@@ -13,6 +13,7 @@ use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\Admin\VacancyController;
 use App\Http\Controllers\MessageFormController;
 use App\Http\Controllers\Admin\AdminFormController;
+use App\Http\Controllers\Admin\WorkTimeController;
 
 // Send Messages
 Route::post('/submit-form-header', [MessageFormController::class, 'sendMessageFromHeader'])->name('send.from.header');
@@ -113,6 +114,16 @@ Route::delete('vacancy/{id}', [VacancyController::class, 'destroy'])->name('vaca
 
 
 Route::get('messages', [AdminFormController::class, 'getDataFromForm'])->name('form.list');
+
+      Route::resource('work-times', WorkTimeController::class)->names([
+          'index'   => 'work_times.index',
+          'create'  => 'work_times.create',
+          'store'   => 'work_times.store',
+          'show'    => 'work_times.show',
+          'edit'    => 'work_times.edit',
+          'update'  => 'work_times.update',
+          'destroy' => 'work_times.destroy',
+      ]);
 
   });
 
