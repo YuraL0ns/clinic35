@@ -1,12 +1,3 @@
-<div class="bb mb-2">
-    <button class="btn btn-xs btn-primary" title="Текст Жирный" onclick="formatText('bold', event)"><i class="fas fa-bold"></i></button>
-    <button class="btn btn-xs btn-primary" title="Текст Курсив" onclick="formatText('italic', event)"><i class="fas fa-signature"></i></button>
-    <button class="btn btn-xs btn-primary" title="Текст Подчеркнутый" onclick="formatText('underline', event)"><i class="fas fa-underline"></i></button>
-    <button class="btn btn-xs btn-primary" title="Список из элементов" onclick="formatText('list', event)"><i class="fas fa-list"></i></button>
-    <button class="btn btn-xs btn-primary" title="Елемент списка" onclick="formatText('itemList', event)"><i class="fas fa-circle"></i></button>
-    <button class="btn btn-xs btn-primary" title="Новая строка" onclick="formatText('br', event)"><i class="fas fa-arrow-down"></i></button>
-</div>
-
 @section('js')
     <script>
         function formatText(command) {
@@ -44,3 +35,11 @@
         }
     </script>
 @endsection
+<div class="bb mb-2">
+    <button class="btn btn-xs btn-primary" title="Текст Жирный" onclick="formatText('bold', event)"><i class="fas fa-bold"></i></button>
+    <button class="btn btn-xs btn-primary" title="Текст Курсив" onclick="formatText('italic', event)"><i class="fas fa-signature"></i></button>
+    <button class="btn btn-xs btn-primary" title="Текст Подчеркнутый" onclick="formatText('underline', event)"><i class="fas fa-underline"></i></button>
+    <button class="btn btn-xs btn-primary" title="Список из элементов" onclick="formatText('list', event)"><i class="fas fa-list"></i></button>
+    <button class="btn btn-xs btn-primary" title="Елемент списка" onclick="formatText('itemList', event)"><i class="fas fa-circle"></i></button>
+    <button class="btn btn-xs btn-primary" title="Новая строка" onclick="formatText('br', event)"><i class="fas fa-arrow-down"></i></button>
+</div>

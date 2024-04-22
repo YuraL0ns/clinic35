@@ -22,7 +22,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <p class="mb-0">You are logged in! 123</p>
+                    <p class="mb-0"></p>
                 </div>
             </div>
         </div>
