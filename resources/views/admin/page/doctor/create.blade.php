@@ -56,27 +56,27 @@
                                 <input type="text" class="form-control" id="doctor_spec" name="doctor_spec" placeholder="">
                             </div>
                             <div class="form-group">
-                                <label for="doctor_first_seals">Цена первиченого приёма</label>
-                                <input type="text" class="form-control" id="doctor_first_seals" name="doctor_first_seals" placeholder="">
+                                <label for="doctor_initial">Цена первиченого приёма</label>
+                                <input type="text" class="form-control" id="doctor_initial" name="doctor_initial" placeholder="">
                             </div>
                             <div class="form-group">
-                                <label for="doctor_repeat_seals">Цена вторичного приёма</label>
-                                <input type="text" class="form-control" id="doctor_repeat_seals" name="doctor_repeat_seals" placeholder="">
+                                <label for="doctor_secondary">Цена вторичного приёма</label>
+                                <input type="text" class="form-control" id="doctor_secondary" name="doctor_secondary" placeholder="">
                             </div>
                             <div class="form-group">
-                                <label for="doctor_start">Стаж работы</label>
-                                <input type="text" class="form-control" id="doctor_start" name="doctor_start" placeholder="2000 - (только цифру, с какого года)">
+                                <label for="doctor_exp">С какого года работает врачем</label>
+                                <input type="text" class="form-control" id="doctor_exp" name="doctor_exp" placeholder="2000 - (только цифру, с какого года)">
                             </div>
                             <div class="form-group">
                                 <label for="visible">Отображать на сайте?</label>
-                                <select class="form-control" id="visible" name="visible">
+                                <select class="form-control" id="doctor_visible" name="doctor_visible">
                                     <option value="1">Да</option>
                                     <option value="0">Нет</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="doctor_img">Фото специалиста</label>
-                                <input type="file" id="doctor_img" name="doctor_img">
+                                <label for="doctor_images">Фото специалиста</label>
+                                <input type="file" id="doctor_images" name="doctor_images">
                             </div>
                         </div>
 
@@ -85,16 +85,16 @@
                     <div class="tab-pane " id="custom-content-below-seo" role="tabpanel" aria-labelledby="custom-content-below-seo-tab">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="doctor_seo_key">SEO - Ключи поиска для специалиста</label>
-                                <input type="text" class="form-control" id="doctor_seo_key" name="doctor_seo_key" placeholder="Если необходимо, казываем через запятую">
+                                <label for="seo_title">SEO - Имя специалиста для вкладок, а так же для поисковой выдачи</label>
+                                <input type="text" class="form-control" id="seo_title" name="seo_title" placeholder="Врач общей практки Иванов Иван Иванович">
                             </div>
                             <div class="form-group">
-                                <label for="doctor_seo_description">SEO - Описание для специалиста</label>
-                                <input type="text" class="form-control" id="doctor_seo_description" name="doctor_seo_description" placeholder="от 10 - до 70 слов">
+                                <label for="seo_description">SEO - Описание для специалиста</label>
+                                <input type="text" class="form-control" id="seo_description" name="seo_description" placeholder="от 10 - до 70 слов">
                             </div>
                             <div class="form-group">
-                                <label for="doctors_seo_title">SEO - Имя специалиста для вкладок, а так же для поисковой выдачи</label>
-                                <input type="text" class="form-control" id="doctors_seo_title" name="doctors_seo_title" placeholder="Врач общей практки Иванов Иван Иванович">
+                                <label for="seo_key"><span class="babge badge-danger">Пока что поле не трогаем</span>SEO - Ключи поиска для специалиста</label>
+                                <input type="text" class="form-control" id="seo_key" name="seo_key" placeholder="Если необходимо, казываем через запятую">
                             </div>
                         </div>
                     </div>

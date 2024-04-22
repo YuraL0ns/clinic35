@@ -109,14 +109,14 @@ class SaitConfigController extends Controller
     public function getDataSalesCreateStore(SalesRequest $request)
     {
         $data = $request->validated();
-        if ($request->hasFile('sales_img')) {
-            $image = $request->file('sales_img');
+        if ($request->hasFile('sales_images')) {
+            $image = $request->file('sales_images');
             $originalFileName = $image->getClientOriginalName();
             $extension = $image->getClientOriginalExtension();
             $fileName = strtolower($data['sales_alias']) . '.' . $extension;
             $path = $image->storeAs('public/template/images/sales', $fileName);
             $fullPath = Storage::url($path);
-            $data['sales_img'] = $fullPath;
+            $data['sales_images'] = $fullPath;
         }
         Sales::create($data);
         return redirect()->route('admin.sales.list')->with('success', 'Акции успешно добавлена');
