@@ -51,7 +51,7 @@ class SaitConfigController extends Controller
     {
         $data = $request->validated();
 
-        if ($request->hasFile('doctor_img')) {
+        if ($request->hasFile('doctor_images')) {
 
             $image = $request->file('doctor_images');
             $originalFileName = $image->getClientOriginalName();
