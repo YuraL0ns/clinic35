@@ -1,7 +1,7 @@
 {{-- resources/views/work_times/create.blade.php --}}
 @extends('adminlte::page')
 
-@section('title', 'Новое время приема')
+@section('title', 'Новое время приёма')
 
 @section('content_header')
     <h1>Новое время приема</h1>

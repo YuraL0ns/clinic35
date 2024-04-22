@@ -10,14 +10,13 @@ use App\Models\Doctor;
 
 class WorkTimeController extends Controller
 {
-    // Показ всех записей
+
     public function index()
     {
         $doctors = Doctor::with('workTimes')->get();
         return view('work_times.index', compact('doctors'));
     }
 
-    // Форма создания новой записи
     public function create(Request $request)
     {
         $doctors = Doctor::all();
@@ -25,7 +24,7 @@ class WorkTimeController extends Controller
         return view('work_times.create', compact('doctors', 'selectedDoctorId'));
     }
 
-    // Сохранение новой записи
+
     public function store(Request $request)
     {
         $request->validate([

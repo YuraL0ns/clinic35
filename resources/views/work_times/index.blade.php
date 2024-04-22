@@ -1,10 +1,10 @@
 {{-- resources/views/work_times/index.blade.php --}}
 @extends('adminlte::page')
 
-@section('title', 'Work Times')
+@section('title', 'Время приёма')
 
 @section('content_header')
-    <h1>Work Times</h1>
+    <h1>Приём специалистов</h1>
 @stop
 
 @section('content')

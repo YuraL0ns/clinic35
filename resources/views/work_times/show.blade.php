@@ -1,7 +1,7 @@
 {{-- resources/views/work_times/show.blade.php --}}
 @extends('adminlte::page')
 
-@section('title', 'Время приема')
+@section('title', 'Время приёма')
 
 @section('content_header')
     <h1>Время приема, {{ $workTime->doctor->doctor_name }}</h1>
