@@ -1,4 +1,4 @@
-@section('js')
+@section('myJs')
     <script>
         function formatText(command) {
             event.preventDefault()
