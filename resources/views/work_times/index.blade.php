@@ -17,6 +17,7 @@
                                 {{ $doctor->doctor_name }}
                             </button>
                             <!-- Кнопка для добавления новой даты -->
+                        <span class="badge badge-primary">{{ route('admin.work_times.create', ['doctor_id' => $doctor->id]) }}</span>
                         <a href="{{ route('admin.work_times.create', ['doctor_id' => $doctor->id]) }}" class="btn btn-sm btn-primary float-right">Добавить время</a>
 
                     </h2>
