@@ -29,7 +29,7 @@ class WorkTimeController extends Controller
         $doctors = Doctor::all();
         $selectedDoctorId = $doctorId;
 
-        return view('admin.work_times.create', compact('doctors', 'selectedDoctorId'));
+        return view('work_times.create', compact('doctors', 'selectedDoctorId'));
     }
 
 
