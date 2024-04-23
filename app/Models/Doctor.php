@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Service;
 use App\Models\WorkTime;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Doctor extends Model
 {
@@ -37,7 +38,7 @@ class Doctor extends Model
         return $this->belongsToMany(Service::class, 'doctor_service', 'service_id', 'doctor_id');
     }
 
-    public function workTimes()
+    public function workTimes() : HasMany
     {
         return $this->hasMany(WorkTime::class);
     }
