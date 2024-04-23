@@ -5,10 +5,10 @@
 
         <div class="doctor_page_view-box">
             <div class="doctor_page_view-box-item">
-                <img class="doctor_page_view-box-item-images" src="/{{$doctor->doctor_images}}" alt="{{$doctor->doctor_name}}">
+                <img class="doctor_page_view-box-item-images" src="/{{$doctor->doctor_images}}"
+                     alt="{{$doctor->doctor_name}}">
             </div>
         </div>
-
 
 
         <div class="nth-box">
@@ -18,14 +18,14 @@
                 </div>
             </div>
 
-          <div class="doctor_page_view-box">
-            <div class="doctor_page_view-box-item ">
-              <div class="doctor_page_view-box-item-box">
-                <p class="doctor_page_view-box-item-box-desc">Специальности</p>
-                <p class="doctor_page_view-box-item-box-desc-text">{!!  $doctor->doctor_spec!!}</p>
-              </div>
+            <div class="doctor_page_view-box">
+                <div class="doctor_page_view-box-item ">
+                    <div class="doctor_page_view-box-item-box">
+                        <p class="doctor_page_view-box-item-box-desc">Специальности</p>
+                        <p class="doctor_page_view-box-item-box-desc-text">{!!  $doctor->doctor_spec!!}</p>
+                    </div>
+                </div>
             </div>
-          </div>
 
             <div class="doctor_page_view-box">
                 <div class="doctor_page_view-box-item">
@@ -48,6 +48,27 @@
                     </div>
                 </div>
             </div>
+
+            @if(count($doctor->workTimes) != Null)
+                <div class="doctor_page_view-box">
+                    <div class="doctor_page_view-box-item">
+                        <div class="doctor_page_view-box-item-box">
+                            <p class="doctor_page_view-box-item-box-desc">Время приёма специалиста</p>
+                            <p class="doctor_page_view-box-item-box-desc-text">
+
+                                @foreach($doctor->workTimes as $workTime)
+                                    <li>
+                                        {{$workTime->work_time}}
+                                    </li>
+                                @endforeach
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            @endif
+
+
         </div>
 
         <div class="doctor_page_view-box">

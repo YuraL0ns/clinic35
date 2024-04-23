@@ -30,6 +30,7 @@ class DoctorController extends Controller
     {
 
         $doctor = Doctor::where('doctor_alias', $doctor_alias)->first();
+        $doctor->workTimes;
 
         SEOTools::setTitle($doctor->seo_title . ' - ' . env('APP_NAME'));
         SEOTools::setDescription($doctor->seo_description);
