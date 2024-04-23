@@ -12,7 +12,7 @@
         @csrf
         <div class="form-group">
             <label for="doctor_id">Выберите специалиста</label>
-            <select class="form-control" name="doctor_id">
+            <select id="doctor_id" class="form-control" name="doctor_id">
                     @foreach($doctors as $doctor)
                         <option value="{{ $doctor->id }}" {{ (int) $selectedDoctorId === $doctor->id ? 'selected' : '' }}>{{ $doctor->doctor_name }}</option>
                     @endforeach
@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
             <label for="work_time">Время работы</label>
-            <input type="datetime-local" class="form-control" name="work_time" required>
+            <input type="datetime-local" class="form-control" name="work_time" id="work_time" required>
         </div>
         <button type="submit" class="btn btn-primary">Сохранить</button>
     </form>
