@@ -19,7 +19,7 @@ class WorkTimeController extends Controller
 
     public function create(Request $request)
     {
-        $doctorId = $request->query('doctor_id');
+        $doctorId = $request->input('doctor_id');
         \Log::info('Doc ID: ' . $doctorId); // Удостоверьтесь, что это пишется в лог
 
         $doctors = Doctor::all();

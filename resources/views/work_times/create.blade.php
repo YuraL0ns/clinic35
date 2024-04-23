@@ -32,6 +32,9 @@
         document.addEventListener('DOMContentLoaded', function () {
             const selectedDoctorId = "{{ $selectedDoctorId }}";
             console.log('Selected Doctor ID:', selectedDoctorId);
+            if (!selectedDoctorId) {
+                console.error('Doctor ID is not set');
+            }
         });
     </script>
 @endsection
