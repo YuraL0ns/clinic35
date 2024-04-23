@@ -422,6 +422,7 @@ return [
             'icon_color' => 'warning',
         ],
         ['header' => 'Пользователи сайта'],
+
         [
             'text' => 'Список пользователей',
             'url' => 'admin/users',
@@ -434,6 +435,7 @@ return [
             'icon' => 'fas fa-user',
             'icon_color' => 'danger',
         ],
+
         ['header' => 'SEO сайта'],
         ['header' => 'Глобальные данные'],
         ['header' => 'Работа менеджера'],
