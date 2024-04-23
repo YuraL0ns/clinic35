@@ -4,10 +4,10 @@
     <div class="sales_page-view">
         <h2 class="sales_page-view-title">Акция: {{$sale->sales_title}}</h2>
         <small class="sales_page-view-date">{{$sale->created_at}}</small>
-        <img class="sales_page-view-images" src="{{asset($sale->sales_img)}}" alt="{{$sale->sales_title}}">
-        @if($sale->sale_desc == NULL)
+        <img class="sales_page-view-images" src="{{asset($sale->sales_images)}}" alt="{{$sale->sales_title}}">
+        @if($sale->sales_description == NULL)
         <p class="sales_page-view-text">
-          {!!$sale->sales_desc!!}
+          {!!$sale->sales_description!!}
         </p>
         @endif
         

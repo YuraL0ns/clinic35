@@ -8,7 +8,7 @@
           <div class="sales_page-box-card card-mob">
             <h5 class="sales_page-box-card-title">{{$item->sales_title}}</h5>
             <small class="sales_page-box-card-date">{{$item->created_at}}</small>
-            <img src="{{$item->sales_img}}" class="sales_page-box-card-images" alt="{{$item->sales_title}}" />
+            <img src="{{$item->sales_images}}" class="sales_page-box-card-images" alt="{{$item->sales_title}}" />
             <a class="sales_page-box-card-button" href="{{route('sait.page.sales.info', $item->sales_alias)}}">Подробнее</a>
           </div>
           @endforeach
