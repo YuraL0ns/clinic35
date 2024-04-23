@@ -12,11 +12,10 @@
         @csrf
         <div class="form-group">
             <label for="doctor_id">Выберите специалиста</label>
-            <select id="doctor_id" class="form-control" name="doctor_id">
-                    @foreach($doctors as $doctor)
-                        <option value="{{ $doctor->id }}" {{ $selectedDoctorId == $doctor->id ? "selected" : "" }}>{{ $doctor->doctor_name }}</option>
-                    @endforeach
-
+            <select class="form-control" name="doctor_id">
+                @foreach($doctors as $doctor)
+                    <option value="{{ $doctor->id }}" {{ $selectedDoctorId == $doctor->id ? 'selected' : '' }}>{{ $doctor->doctor_name }}</option>
+                @endforeach
             </select>
 
         </div>
@@ -27,3 +26,12 @@
         <button type="submit" class="btn btn-primary">Сохранить</button>
     </form>
 @stop
+
+@section('myJs')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const selectedDoctorId = "{{ $selectedDoctorId }}";
+            console.log('Selected Doctor ID:', selectedDoctorId);
+        });
+    </script>
+@endsection
