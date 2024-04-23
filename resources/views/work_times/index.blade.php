@@ -8,6 +8,9 @@
 @stop
 
 @section('content')
+    <div class="mb-3">
+        <input type="text" id="searchInput" class="form-control" placeholder="Поиск по докторам...">
+    </div>
     <div class="accordion" id="doctorsAccordion">
         @foreach ($doctors as $index => $doctor)
             <div class="card">
@@ -40,3 +43,25 @@
         @endforeach
     </div>
 @stop
+
+@section('myJs')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const accordions = document.querySelectorAll('.card');
+
+            searchInput.addEventListener('keyup', function() {
+                const searchText = searchInput.value.toLowerCase();
+
+                accordions.forEach(card => {
+                    const doctorName = card.querySelector('.btn-link').textContent.toLowerCase();
+                    if (doctorName.includes(searchText)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+@endsection
