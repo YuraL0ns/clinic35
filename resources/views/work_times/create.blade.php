@@ -14,7 +14,7 @@
             <label for="doctor_id">Выберите специалиста</label>
             <select id="doctor_id" class="form-control" name="doctor_id">
                     @foreach($doctors as $doctor)
-                        <option value="{{ $doctor->id }}" {{ (string) $selectedDoctorId == (string) $doctor->id ? "selected" : "" }}>{{ $doctor->doctor_name }}</option>
+                        <option value="{{ $doctor->id }}" {{ $selectedDoctorId == $doctor->id ? "selected" : "" }}>{{ $doctor->doctor_name }}</option>
                     @endforeach
 
             </select>

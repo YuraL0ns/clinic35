@@ -19,9 +19,10 @@ class WorkTimeController extends Controller
 
     public function create(Request $request)
     {
+        $doctorId = $request->query('doctor_id');
         \Log::info('Full Request: ' . print_r($request->all(), true));
         $doctors = Doctor::all();
-        $selectedDoctorId = $request->input('doctor_id');
+        $selectedDoctorId = $doctorId;
         \Log::info('doctor_id: ' .$selectedDoctorId );
         return view('work_times.create', compact('doctors', 'selectedDoctorId'));
     }
