@@ -16,8 +16,6 @@
                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{ $index }}" aria-expanded="true" aria-controls="collapse{{ $index }}">
                                 {{ $doctor->doctor_name }}
                             </button>
-                            <!-- Кнопка для добавления новой даты -->
-                        <span class="badge badge-primary">{{ route('admin.work_times.create', ['doctor_id' => $doctor->id]) }}</span>
                         <a href="{{ route('admin.work_times.create', ['doctor_id' => $doctor->id]) }}" class="btn btn-sm btn-primary float-right">Добавить время</a>
 
                     </h2>
@@ -27,9 +25,7 @@
                     <div class="card-body">
                         <ul>
                             @foreach ($doctor->workTimes as $workTime)
-                                <li>@customDate($workTime->work_time)</li>
-
-
+                                <li>{{ $workTime->work_time}}</li>
                             @endforeach
                         </ul>
                     </div>
@@ -37,13 +33,4 @@
             </div>
         @endforeach
     </div>
-@stop
-
-@section('css')
-
-@stop
-
-@section('js')
-    <script>
-    </script>
 @stop
