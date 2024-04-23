@@ -17,15 +17,21 @@ class WorkTimeController extends Controller
         return view('work_times.index', compact('doctors'));
     }
 
+    // В методе create вашего контроллера
     public function create(Request $request)
     {
-        $selectedDoctorId = $request->query('doctor_id');
-        \Log::info('Doctor ID from query: ' . $selectedDoctorId);
+        // Используйте метод all() для диагностики
+        \Log::info('All Request Data:', $request->all()); // Проверьте все данные запроса
+
+        $doctorId = $request->input('doctor_id', 'default_value'); // Используйте значение по умолчанию для проверки
+        \Log::info('Doctor ID from input: ' . $doctorId);
 
         $doctors = Doctor::all();
+        $selectedDoctorId = $doctorId;
 
-        return view('work_times.create', compact('doctors', 'selectedDoctorId'));
+        return view('admin.work_times.create', compact('doctors', 'selectedDoctorId'));
     }
+
 
 
     public function store(Request $request)
