@@ -23,9 +23,15 @@
 
                 <div id="collapse{{ $index }}" class="collapse {{ $index == 0 ? 'show' : '' }}" aria-labelledby="heading{{ $index }}" data-parent="#doctorsAccordion">
                     <div class="card-body">
-                        <ul>
+                        <ul class="">
                             @foreach ($doctor->workTimes as $workTime)
-                                <li>{{ $workTime->work_time}}</li>
+                                <li>{{ $workTime->work_time}}
+                                    <form class="ml-3" action="{{ route('admin.work_times.destroy', $workTime) }}" method="POST" style="display: inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Вы уверены?')"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
