@@ -61,10 +61,17 @@
                             <p class="doctor_page_view-box-item-box-desc-text">
 
                                 @foreach($doctor->workTimes as $workTime)
-                                    <li>
-                                        {{ \Carbon\Carbon::parse($workTime->work_time)->format('d.m.Y H:i') }}
-                                    </li>
+                                    @php
+                                        $workTimeDate = \Carbon\Carbon::parse($workTime->work_time);
+                                        $currentTime = \Carbon\Carbon::now();
+                                    @endphp
+                                    @if ($workTimeDate > $currentTime)
+                                        <li>
+                                            {{ $workTimeDate->format('d.m.Y H:i') }}
+                                        </li>
+                                    @endif
                                 @endforeach
+
 
                             </p>
                         </div>
