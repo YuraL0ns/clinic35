@@ -33,19 +33,33 @@
 
     <script>
         document.getElementById('generateSlots').addEventListener('click', function() {
-            const startTime = document.getElementById('startTime').value;
-            const endTime = document.getElementById('endTime').value;
+            const startTimeValue = document.getElementById('startTime').value;
+            const endTimeValue = document.getElementById('endTime').value;
             const timeSlotsContainer = document.getElementById('timeSlots');
 
-            // Очищаем предыдущие интервалы
+            // Очистить предыдущие интервалы
             timeSlotsContainer.innerHTML = '';
 
-            let currentTime = new Date();
-            currentTime.setHours(startTime.split(':')[0], startTime.split(':')[1], 0, 0);
-            const end = new Date();
-            end.setHours(endTime.split(':')[0], endTime.split(':')[1], 0, 0);
+            // Разбиваем время начала и конца на часы и минуты
+            const [startHour, startMinute] = startTimeValue.split(':').map(Number);
+            const [endHour, endMinute] = endTimeValue.split(':').map(Number);
 
-            while (currentTime <= end) {
+            // Получаем текущее время
+            const currentDate = new Date();
+            const currentHour = currentDate.getHours();
+            const currentMinute = currentDate.getMinutes();
+
+            // Устанавливаем начальное и конечное время с учетом текущего времени
+            let startTime = new Date(currentDate);
+            startTime.setHours(startHour);
+            startTime.setMinutes(startMinute);
+
+            let endTime = new Date(currentDate);
+            endTime.setHours(endHour);
+            endTime.setMinutes(endMinute);
+
+            // Генерация интервалов времени
+            while (startTime < endTime) {
                 const timeSlot = document.createElement('div');
                 timeSlot.className = 'form-group time-slot';
 
@@ -53,15 +67,33 @@
                 input.type = 'datetime-local';
                 input.className = 'form-control';
                 input.name = 'work_time[]';
-                input.value = currentTime.toISOString().substring(0, 16);
+                input.value = formatTime(startTime);
 
                 timeSlot.appendChild(input);
                 timeSlotsContainer.appendChild(timeSlot);
 
-                // Добавляем 15 минут
-                currentTime.setMinutes(currentTime.getMinutes() + 15);
+                // Добавляем 15 минут к текущему времени
+                startTime.setMinutes(startTime.getMinutes() + 15);
             }
         });
+
+        // Функция для форматирования времени в строку для ввода datetime-local
+        function formatTime(date) {
+            const year = date.getFullYear();
+            const month = padZero(date.getMonth() + 1);
+            const day = padZero(date.getDate());
+            const hour = padZero(date.getHours());
+            const minute = padZero(date.getMinutes());
+            return `${year}-${month}-${day}T${hour}:${minute}`;
+        }
+
+        // Функция для добавления ведущего нуля к числу, если оно меньше 10
+        function padZero(num) {
+            return num < 10 ? '0' + num : num;
+        }
+
+
+
 
     </script>
 @stop
