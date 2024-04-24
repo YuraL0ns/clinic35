@@ -1,3 +1,7 @@
+@php
+    use Carbon\Carbon;
+@endphp
+
 @extends('tmp.main.default')
 @section('content')
 
@@ -58,7 +62,7 @@
 
                                 @foreach($doctor->workTimes as $workTime)
                                     <li>
-                                        {{$workTime->work_time}}
+                                        {{ \Carbon\Carbon::parse($workTime->work_time)->format('d.m.Y H:i') }}
                                     </li>
                                 @endforeach
 
