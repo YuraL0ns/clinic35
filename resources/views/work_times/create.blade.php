@@ -44,12 +44,10 @@
             const [startHour, startMinute] = startTimeValue.split(':').map(Number);
             const [endHour, endMinute] = endTimeValue.split(':').map(Number);
 
-            // Получаем текущее время
+            // Получаем текущую дату
             const currentDate = new Date();
-            const currentHour = currentDate.getHours();
-            const currentMinute = currentDate.getMinutes();
 
-            // Устанавливаем начальное и конечное время с учетом текущего времени
+            // Устанавливаем начальное и конечное время с учетом текущей даты
             let startTime = new Date(currentDate);
             startTime.setHours(startHour);
             startTime.setMinutes(startMinute);
@@ -59,7 +57,7 @@
             endTime.setMinutes(endMinute);
 
             // Генерация интервалов времени
-            while (startTime < endTime) {
+            while (startTime <= endTime) {
                 const timeSlot = document.createElement('div');
                 timeSlot.className = 'form-group time-slot';
 
@@ -91,9 +89,6 @@
         function padZero(num) {
             return num < 10 ? '0' + num : num;
         }
-
-
-
 
     </script>
 @stop
