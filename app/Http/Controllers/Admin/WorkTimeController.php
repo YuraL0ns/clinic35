@@ -38,12 +38,32 @@ class WorkTimeController extends Controller
     {
         $request->validate([
             'doctor_id' => 'required|exists:doctors,id',
-            'work_time' => 'required|date',
+            'work_time.*' => 'required|date',
         ]);
 
-        WorkTime::create($request->all());
+        $doctorId = $request->input('doctor_id');
+        $workTimes = $request->input('work_time');
+
+        foreach ($workTimes as $time) {
+            WorkTime::create([
+                'doctor_id' => $doctorId,
+                'work_time' => $time
+            ]);
+        }
         return redirect()->route('admin.work_times.index')->with('success', 'Дата успешно добавлена!');
     }
+//    public function store(Request $request)
+//    {
+//        $workTimes = $request->input('work_times');
+//
+//        foreach ($workTimes as $time) {
+//            // Здесь добавьте логику создания нового интервала времени
+//            // Например, сохранение в базу данных
+//            WorkTime::create(['work_time' => $time]);
+//        }
+//
+//        return back()->with('success', 'Временные интервалы сохранены.');
+//    }
 
     // Показ конкретной записи
     public function show(WorkTime $workTime)
