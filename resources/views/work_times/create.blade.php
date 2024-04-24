@@ -15,13 +15,16 @@
             </select>
 
         </div>
-        <div id="timeSlots">
-            <div class="form-group time-slot">
-                <label for="work_time">Время работы</label>
-                <input type="datetime-local" class="form-control" name="work_time[]" id="work_time" required>
-            </div>
+        <div class="form-group">
+            <label for="startTime">Начальное время</label>
+            <input type="time" class="form-control" name="startTime" id="startTime" required>
         </div>
-        <button type="button" class="btn btn-secondary" id="addTimeSlot">Добавить интервал</button>
+        <div class="form-group">
+            <label for="endTime">Конечное время</label>
+            <input type="time" class="form-control" name="endTime" id="endTime" required>
+        </div>
+        <div id="timeSlots"></div>
+        <button type="button" class="btn btn-secondary" id="generateSlots">Сгенерировать интервалы</button>
         <button type="submit" class="btn btn-primary">Сохранить</button>
     </form>
 @stop
@@ -29,27 +32,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
     <script>
-        document.getElementById('addTimeSlot').addEventListener('click', function() {
-            let lastInput = document.querySelectorAll('.time-slot:last-child input')[0];
-            let newTime = moment(lastInput.value);
+        document.getElementById('generateSlots').addEventListener('click', function() {
+            const startTime = document.getElementById('startTime').value;
+            const endTime = document.getElementById('endTime').value;
+            const timeSlotsContainer = document.getElementById('timeSlots');
 
-            // Добавляем 15 минут к текущему времени с учетом часового пояса
-            newTime.add(15, 'minutes');
+            // Очищаем предыдущие интервалы
+            timeSlotsContainer.innerHTML = '';
 
-            let newInput = lastInput.cloneNode(true);
-            // Обновляем значение input, устанавливая форматированное локальное время
-            newInput.value = newTime.format('YYYY-MM-DDTHH:mm');
+            let currentTime = new Date();
+            currentTime.setHours(startTime.split(':')[0], startTime.split(':')[1], 0, 0);
+            const end = new Date();
+            end.setHours(endTime.split(':')[0], endTime.split(':')[1], 0, 0);
 
-            let newDiv = document.createElement('div');
-            newDiv.className = 'form-group time-slot';
+            while (currentTime <= end) {
+                const timeSlot = document.createElement('div');
+                timeSlot.className = 'form-group time-slot';
 
-            let label = document.createElement('label');
-            label.textContent = 'Время работы';
-            newDiv.appendChild(label);
+                const input = document.createElement('input');
+                input.type = 'datetime-local';
+                input.className = 'form-control';
+                input.name = 'work_time[]';
+                input.value = currentTime.toISOString().substring(0, 16);
 
-            newDiv.appendChild(newInput);
+                timeSlot.appendChild(input);
+                timeSlotsContainer.appendChild(timeSlot);
 
-            document.getElementById('timeSlots').appendChild(newDiv);
+                // Добавляем 15 минут
+                currentTime.setMinutes(currentTime.getMinutes() + 15);
+            }
         });
 
     </script>
