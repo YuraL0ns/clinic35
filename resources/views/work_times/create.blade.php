@@ -16,6 +16,10 @@
 
         </div>
         <div class="form-group">
+            <label for="start_date">Дата начала приема</label>
+            <input type="date" class="form-control" id="start_date" name="start_date" required>
+        </div>
+        <div class="form-group">
             <label for="startTime">Начальное время</label>
             <input type="time" class="form-control" name="startTime" id="startTime" required>
         </div>
@@ -33,6 +37,7 @@
 
     <script>
         document.getElementById('generateSlots').addEventListener('click', function() {
+            const startDateValue = document.getElementById('start_date').value;
             const startTimeValue = document.getElementById('startTime').value;
             const endTimeValue = document.getElementById('endTime').value;
             const timeSlotsContainer = document.getElementById('timeSlots');
@@ -44,15 +49,15 @@
             const [startHour, startMinute] = startTimeValue.split(':').map(Number);
             const [endHour, endMinute] = endTimeValue.split(':').map(Number);
 
-            // Получаем текущую дату
-            const currentDate = new Date();
+            // Получаем дату начала приема
+            const startDate = new Date(startDateValue);
 
-            // Устанавливаем начальное и конечное время с учетом текущей даты
-            let startTime = new Date(currentDate);
+            // Устанавливаем начальное и конечное время с учетом введенной даты
+            let startTime = new Date(startDate);
             startTime.setHours(startHour);
             startTime.setMinutes(startMinute);
 
-            let endTime = new Date(currentDate);
+            let endTime = new Date(startDate);
             endTime.setHours(endHour);
             endTime.setMinutes(endMinute);
 
@@ -89,6 +94,7 @@
         function padZero(num) {
             return num < 10 ? '0' + num : num;
         }
+
 
     </script>
 @stop
