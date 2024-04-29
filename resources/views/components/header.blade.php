@@ -26,6 +26,9 @@
         </div>
       </div>
 
+      <div class="block">
+        <a href="{{route('register.user.online')}}" class="nav-header__onCall-item js-static-modal-toggle">Онлайн регистрация</a>
+      </div>
 
       <div class="nav-header__onCall">
         <button type="button" class="nav-header__onCall-item js-static-modal-toggle" onclick="openModal()">Записатся на прием</button>
@@ -79,7 +82,7 @@
             <a href="{{route('sait.page.price')}}">Акции</a>
           </li>
           <li class="navbar-menu-list-item">
-            <a href="{{route('sait.page.documents')}}">Документы</a>
+            <a href="{{env('APP_URL')}}/page/documents">Документы</a>
           </li>
           <li class="navbar-menu-list-item">
             <a href="{{route('sait.vacancy.main')}}">Вакансии</a>

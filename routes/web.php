@@ -14,6 +14,9 @@ use App\Http\Controllers\Admin\VacancyController;
 use App\Http\Controllers\MessageFormController;
 use App\Http\Controllers\Admin\AdminFormController;
 use App\Http\Controllers\Admin\WorkTimeController;
+use App\Http\Controllers\Admin\WarehouseCategoryController;
+use App\Http\Controllers\Admin\WarehouseController;
+
 
 // Send Messages
 Route::post('/submit-form-header', [MessageFormController::class, 'sendMessageFromHeader'])->name('send.from.header');
@@ -38,12 +41,12 @@ Route::get('sales', [MainController::class, 'page_price'])->name('sait.page.pric
 Route::get('sales/{alias}', [MainController::class, 'get_sales_info'])->name('sait.page.sales.info');
 // Route::get('time-to-work', [MainController::class, 'page_timeToWork'])->name('sait.page.timeToWork');
 Route::get('abouts', [MainController::class, 'page_abouts'])->name('sait.page.abouts');
-Route::get('documents', [MainController::class, 'page_documents'])->name('sait.page.documents');
 Route::get('contacts', [MainController::class, 'page_contacts'])->name('contact');
 
 Route::get('vacancy', [MainController::class, 'mainVacancy'])->name('sait.vacancy.main');
 Route::get('vacancy/{vacancy_alias}', [MainController::class, 'showVacancy'])->name('sait.vacancy.show');
 
+Route::get('/online-register', function() {return view('tmp.sait.page.register.online');})->name('register.user.online');
 
 
 
@@ -115,23 +118,35 @@ Route::delete('vacancy/{id}', [VacancyController::class, 'destroy'])->name('vaca
 
 Route::get('messages', [AdminFormController::class, 'getDataFromForm'])->name('form.list');
 
-      Route::resource('work-times', WorkTimeController::class)->names([
-          'index'   => 'work_times.index',
-          'create'  => 'work_times.create',
-          'store'   => 'work_times.store',
-          'show'    => 'work_times.show',
-          'edit'    => 'work_times.edit',
-          'update'  => 'work_times.update',
-          'destroy' => 'work_times.destroy',
-      ]);
+Route::resource('work-times', WorkTimeController::class)->names([
+  'index'   => 'work_times.index',
+  'create'  => 'work_times.create',
+  'store'   => 'work_times.store',
+  'show'    => 'work_times.show',
+  'edit'    => 'work_times.edit',
+  'update'  => 'work_times.update',
+  'destroy' => 'work_times.destroy',
+]);
 
+//Route::resource('warehouse', WarehouseController::class)->names([
+//  'index' => 'warehouse.index',
+//  'create' => 'warehouse.create',
+//  'store' => 'warehouse.store',
+//  'show' => 'warehouse.show',
+//  'edit' => 'warehouse.edit',
+//  'update' => 'warehouse.update',
+//  'destroy' => 'warehouse.destroy',
+//]);
+//
+//Route::resource('warehouse/categories', WarehouseCategoryController::class)->names([
+//    'create' => 'warehouse.category.create',
+//    'store' => 'warehouse.category.store',
+//    'edit' => 'warehouse.category.edit',
+//    'update' => 'warehouse.category.update',
+//    'destroy' => 'warehouse.category.destroy',
+//]);
 
-  });
+});
 
 
 require __DIR__.'/auth.php';
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
