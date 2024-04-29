@@ -15,6 +15,6 @@ class File extends Model
 
     public function page ()
     {
-        return $this->belongsToMany(Page::class);
+        return $this->belongsToMany(Page::class, 'page_file', 'page_id', 'file_id');
     }
 }
