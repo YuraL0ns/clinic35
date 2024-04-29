@@ -26,9 +26,9 @@
         </div>
       </div>
 
-      <div class="block">
-        <a href="{{route('register.user.online')}}" class="nav-header__onCall-item js-static-modal-toggle">Онлайн регистрация</a>
-      </div>
+{{--      <div class="block">--}}
+{{--        <a href="{{route('register.user.online')}}" class="nav-header__onCall-item js-static-modal-toggle">Онлайн регистрация</a>--}}
+{{--      </div>--}}
 
       <div class="nav-header__onCall">
         <button type="button" class="nav-header__onCall-item js-static-modal-toggle" onclick="openModal()">Записатся на прием</button>
