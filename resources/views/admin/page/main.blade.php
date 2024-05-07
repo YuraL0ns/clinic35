@@ -22,7 +22,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <p class="mb-0"></p>
+                    <p class="mb-0">
+                        <a class="btn btn-lg btn-success" href="{{route('admin.form.list')}}">Перейти на заявки</a>
+                    </p>
                 </div>
             </div>
         </div>
