@@ -35,7 +35,7 @@
                                 <tr>
                                     <td>{{ $submission->name }}</td>
                                     <td><a href="tel:{{ $submission->phone }}">{{ $submission->phone }}</a></td>
-                                    <td>{{ $submission->create_at }}</td>
+                                    <td>{{ $submission->created_at }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
