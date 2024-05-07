@@ -9,7 +9,7 @@ class AdminFormController extends Controller
 {
     public function getDataFromForm()
     {
-        $submissions = MessageForm::all();
+        $submissions = MessageForm::orderBy('created_at', 'desc')->all();
         return view('admin.page.messages.list', compact('submissions'));
     }
 }
