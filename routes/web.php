@@ -56,7 +56,7 @@ Route::get('sitemap.xml', [SitemapController::class, 'generate']);
 Auth::routes();
 Route::prefix('admin')
   ->name('admin.')
-  ->middleware(['auth', 'role:Администратор'])
+  ->middleware(['auth', 'role:Администратор,Менеджер'])
   ->group(function(){
 
   Route::get('/', [CustomController::class, 'mainAdmin'])->name('main');
