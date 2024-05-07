@@ -27,6 +27,7 @@
                             <tr>
                                 <th>Имя</th>
                                 <th>Телефон</th>
+                                <th>Дата</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -34,6 +35,7 @@
                                 <tr>
                                     <td>{{ $submission->name }}</td>
                                     <td><a href="tel:{{ $submission->phone }}">{{ $submission->phone }}</a></td>
+                                    <td>{{ $submission->create_at }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
