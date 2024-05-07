@@ -128,6 +128,9 @@ Route::resource('work-times', WorkTimeController::class)->names([
   'destroy' => 'work_times.destroy',
 ]);
 
+    
+
+
 //Route::resource('warehouse', WarehouseController::class)->names([
 //  'index' => 'warehouse.index',
 //  'create' => 'warehouse.create',
@@ -147,6 +150,7 @@ Route::resource('work-times', WorkTimeController::class)->names([
 //]);
 
 });
-
+Route::middleware(['role:Администратор,Менеджер'])->get('messages', [AdminFormController::class, 'getDataFromForm'])->name('form.list');
+    Route::middleware(['role:Администратор,Менеджер'])->get('/', [CustomController::class, 'mainAdmin'])->name('main');
 
 require __DIR__.'/auth.php';
