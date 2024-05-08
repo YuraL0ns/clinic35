@@ -13,6 +13,7 @@
     <div class="row">
         
         @php
+        use Carbon\Carbon;
             $groups = ['header' => [], 'footer' => [], 'page_vacancy' => []];
             foreach ($submissions as $submission) {
                 $groups[$submission->from][] = $submission;
