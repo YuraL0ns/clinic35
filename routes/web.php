@@ -151,6 +151,6 @@ Route::resource('work-times', WorkTimeController::class)->names([
 
 });
 Route::middleware(['role:Администратор,Менеджер'])->get('messages', [AdminFormController::class, 'getDataFromForm'])->name('form.list');
-    Route::middleware(['role:Администратор,Менеджер'])->get('/', [CustomController::class, 'mainAdmin'])->name('main');
+    Route::middleware(['role:Администратор,Менеджер'])->get('/admin/', [CustomController::class, 'mainAdmin'])->name('main');
 
 require __DIR__.'/auth.php';
