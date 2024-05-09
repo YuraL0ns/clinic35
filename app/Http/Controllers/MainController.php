@@ -21,7 +21,7 @@ class MainController extends Controller
     public function index_page()
     {
         SEOTools::setTitle(env('APP_NAME'));
-        SEOTools::setDescription('');
+        SEOTools::setDescription('Первая многопрофильная клиника в городе Череповец приглашает Вас к себе на обследование. Записаться на прием можно по телефону 📞 +7 (921) 252-40-02.');
         SEOTools::opengraph()->setUrl(route('sait.home.page'));
         SEOTools::setCanonical(route('sait.home.page'));
         SEOTools::opengraph()->addProperty('type', 'webpage');
@@ -88,7 +88,7 @@ class MainController extends Controller
         $sale = Sales::where('sales_alias', $alias)->first();
 
         SEOTools::setTitle(env('APP_NAME') .' - '. $sale->sales_title);
-        SEOTools::setDescription($sale->sales_seo_description);
+        SEOTools::setDescription($sale->seo_description);
         SEOTools::opengraph()->setUrl(route('sait.page.sales.info', $sale->sales_alias));
         SEOTools::setCanonical(route('sait.page.sales.info', $sale->sales_alias));
         SEOTools::opengraph()->addProperty('type', 'webpage');
