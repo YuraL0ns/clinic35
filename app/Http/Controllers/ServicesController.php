@@ -52,11 +52,11 @@ class ServicesController extends Controller
         $service = Service::where('service_alias', $service_alias)->first();
 
         SEOTools::setTitle($service->service_title. ' - ' . env('APP_NAME'));
-        SEOTools::setDescription($service->service_seo_description);
+        SEOTools::setDescription($service->seo_description);
         SEOTools::opengraph()->setUrl(route('sait.page.sales.info', $service->service_alias));
         SEOTools::setCanonical(route('sait.page.sales.info', $service->service_alias));
         SEOTools::opengraph()->addProperty('type', 'webpage');
-        SEOMeta::setKeywords($service->service_seo_keywords);
+        SEOMeta::setKeywords($service->seo_keywords);
         SEOTools::jsonLd()->addImage('http://project-clinic.test/template/navbar/logo.png');
 
         $service->doctors();
