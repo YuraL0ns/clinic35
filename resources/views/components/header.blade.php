@@ -31,7 +31,7 @@
 {{--      </div>--}}
 
       <div class="nav-header__onCall">
-        <button type="button" class="nav-header__onCall-item js-static-modal-toggle" onclick="openModal()">Записатся на прием</button>
+        <button type="button" class="nav-header__onCall-item js-static-modal-toggle" onclick="openModal()">Записаться на приём</button>
       </div>
 
 
