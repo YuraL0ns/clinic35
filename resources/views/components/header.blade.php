@@ -20,7 +20,7 @@
               <span class="nav-header__ta-lr-r-item-span">Пн-Пт — с 08:00 до 20:00</span>
             </li>
             <li class="nav-header__ta-lr-r-item">
-              <span class="nav-header__ta-lr-r-item-span">Сб-Вс — с 09:00 до 15:00</span>
+              <span class="nav-header__ta-lr-r-item-span">Сб-Вс — с 09:00 до 17:00</span>
             </li>
           </ul>
         </div>
