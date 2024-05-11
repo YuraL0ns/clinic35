@@ -22,7 +22,7 @@
       <div>
         <time
             itemprop="openingHours"
-            datetime="Sa,Su 08:00−15:00">По субботам и воскресениям с 09.00 до 15.00
+            datetime="Sa,Su 08:00−15:00">По субботам и воскресениям с 09.00 до 17.00
             </time>
       </div>
     </div>
