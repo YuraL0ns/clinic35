@@ -16,16 +16,18 @@
                     @method('PUT')
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="doctor_name">Название акции</label>
-                            <input type="text" class="form-control" id="doctor_name" name="doctor_name" value="{{ $sales->sales_title }}">
+                            <label for="sales_title">Название акции</label>
+                            <input type="text" class="form-control" id="sales_title" name="sales_title" value="{{ $sales->sales_title }}">
                         </div>
                         <div class="form-group">
-                            <label for="doctor_alias">Алиас страницы</label>
-                            <input type="text" class="form-control" id="doctor_alias" name="doctor_alias" value="{{ $sales->sales_title }}">
+                            <label for="sales_alias">Алиас страницы</label>
+                            <input type="text" class="form-control" id="sales_alias" name="sales_alias" value="{{ $sales->sales_alias }}">
                         </div>
                         <div class="form-group">
-                            <label for="doctor_students">Описание Акции</label>
-                            <textarea value="{{$sales->sales_description}}" name="sales_description" class="form-control"></textarea>
+                            <label for="sales_description">Описание Акции</label>
+                            <textarea  name="sales_description" class="form-control">
+                                {!! $sales->sales_description !!}
+                            </textarea>
                         </div>
 
                         <div class="form-group">
