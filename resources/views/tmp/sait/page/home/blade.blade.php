@@ -4,7 +4,7 @@
  <section class="hero">
     <div class="hero__container">
       <div class="hero-box">
-          <a href="#" class="hero-box-href">
+          <a href="https://clinic35.ru/sales/Priem-moskovskih-plasticheskih-hirurgov" class="hero-box-href">
               <img class="hero-box-href-img" src="{{asset('/template/sld.png')}}" alt="Бесплатный приём пластических хирургов" />
           </a>
       </div>
