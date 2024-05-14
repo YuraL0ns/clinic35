@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="box box-primary">
 
                 <form role="form" action="{{ route('admin.sales.edit.update', ['sales' => $sales->id]) }}" method="POST" enctype="multipart/form-data">
