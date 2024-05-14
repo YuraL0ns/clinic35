@@ -228,6 +228,18 @@
 
   }
 
+  .hero {
+    &-box {
+      &-href {
+        width: 100%;
+        &-img {
+          width: 100%;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
   .services {
     &__container {
       display: flex;

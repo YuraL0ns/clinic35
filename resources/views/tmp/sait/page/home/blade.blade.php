@@ -1,13 +1,15 @@
 @extends('tmp.main.default')
 @section('content')
 
-<!-- <section class="hero">
+ <section class="hero">
     <div class="hero__container">
       <div class="hero-box">
-        Slider Hero Box - Container
+          <a href="#" class="hero-box-href">
+              <img class="hero-box-href-img" src="{{asset('/template/sld.png')}}" alt="Бесплатный приём пластических хирургов" />
+          </a>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <section class="services">
     <div class="services__container">
