@@ -5,7 +5,7 @@
     <div class="hero__container">
       <div class="hero-box">
           <a href="https://clinic35.ru/sales/Priem-moskovskih-plasticheskih-hirurgov" class="hero-box-href">
-              <img class="hero-box-href-img" src="{{asset('/template/sld.png')}}" alt="Бесплатный приём пластических хирургов" />
+              <img class="hero-box-href-img" src="{{asset('/template/sld.png')}}" alt="Приём пластических хирургов в Первой многопрофильной клинике" />
           </a>
       </div>
     </div>
