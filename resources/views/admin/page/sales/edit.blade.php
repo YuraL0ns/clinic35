@@ -24,23 +24,23 @@
                             <input type="text" class="form-control" id="doctor_alias" name="doctor_alias" value="{{ $sales->sales_title }}">
                         </div>
                         <div class="form-group">
-                            <label for="doctor_students">Doctor Students</label>
+                            <label for="doctor_students">Описание Акции</label>
                             <textarea value="{{$sales->sales_description}}" name="sales_description" class="form-control"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label for="sales_imagee">Doctor Image</label>
-                            <input type="file" id="sales_imagee" name="sales_imagee">
-                            @if ($sales->sales_img)
-                                <img src="{{ $sales->sales_img }}" style="max-width: 200px; margin-top: 10px;">
+                            <label for="sales_image">Sales Image</label>
+                            <input type="file" id="sales_images" name="sales_images">
+                            @if ($sales->sales_images)
+                                <img src="{{ $sales->sales_images }}" style="max-width: 200px; margin-top: 10px;">
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="doctor_seo_key">SEO Ключи</label>
+                            <label for="eo_key">SEO Ключи</label>
                             <input type="text" class="form-control" id="doctor_seo_key" name="doctor_seo_key" value="{{ $sales->seo_key }}">
                         </div>
                         <div class="form-group">
-                            <label for="doctor_seo_title">SEO Название</label>
+                            <label for="seo_title">SEO Название</label>
                             <input type="text" class="form-control" id="doctor_seo_title" name="doctor_seo_title" value="{{ $sales->seo_title }}">
                         </div>
                         <div class="form-group">
