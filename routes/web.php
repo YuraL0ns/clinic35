@@ -24,11 +24,6 @@ Route::post('/submit-form-footer', [MessageFormController::class, 'sendMessageFr
 Route::get('/', [MainController::class, 'index_page'])->name('sait.home.page');
 Route::get('page/{page_alias}', [PagesController::class, 'show'])->name('custom.page');
 
-Route::prefix('news')->name('sait.news.')->group(function (){
-  Route::get('/', [PostController::class, 'getPostsList'])->name('list');
-  Route::get('/{post_alias}', [PostController::class, 'getPostData'])->name('info');
-});
-
 Route::get('/services', [ServicesController::class, 'getServicesList'])->name('sait.home.services.list');
 Route::get('/services/{razdel_alias}', [ServicesController::class, 'getRazdelData'])->name('sait.razdel.show');
 Route::get('/services/{razdel_alias}/{alias}', [ServicesController::class, 'getServicesInfo'])->name('sait.razdel.show.services');
